@@ -1,0 +1,5 @@
+app_identifier("com.gain_solution.app")
+apple_id("<your@email.here>")
+
+itc_team_id("team_id_int")
+team_id("team_searial")
