@@ -1,9 +1,11 @@
 import '../shared/shared.dart';
 //! mason:linking-imports - DO NOT REMOVE THIS COMMENT --------------------------->
+import '../../features/tickets/tickets.dart';
 
 part 'dependencies.dart';
 part 'network_certificates.dart';
 //! mason:linking-dependencies - DO NOT REMOVE THIS COMMENT ---------------------->
+part 'dependencies/tickets.dart';
 
 class AppConfig {
   static FutureOr<void> init() async {

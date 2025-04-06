@@ -1,0 +1,37 @@
+{
+    "result":[
+        {
+          "id": "123198423",
+          "title": "Search view, which can display dynamic suggestions, is the focused state of...",
+          "assigned_to": "Michele",
+          "date": "23 Dec 2023 03:43 pm",
+          "priority": "Low",
+          "status": "Open",
+          "category": "New",
+          "isSpam": false
+        },
+        {
+          "id": "123194425",
+          "title": "Ticket subject small",
+          "assigned_to": "Noah",
+          "date": "23 Dec 2023 03:43 pm",
+          "priority": "Urgent",
+          "status": "Open",
+          "category": "First response overdue",
+          "isSpam": true
+        },
+        {
+          "id": "123195422",
+          "title": "Search view, which can display dynamic suggestions, is the focused state of...",
+          "assigned_to": "Jonus",
+          "date": "23 Dec 2023 03:43 pm",
+          "priority": "Low",
+          "status": "Open",
+          "category": "Customer responded",
+          "isSpam": false
+        }
+      ]
+      ,
+      "success": true,
+      "error": null
+}

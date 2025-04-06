@@ -1,4 +1,5 @@
 //! mason:linking-failures - DO NOT REMOVE THIS COMMENT --------------------------->
+part 'tickets.dart';
 
 abstract class Failure {
   final String message;
