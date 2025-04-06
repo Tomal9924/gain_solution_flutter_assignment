@@ -12,18 +12,17 @@ class TicketsRepositoryImpl extends TicketsRepository {
     required this.remote,
   });
 
-/*
+  /*
       final result = await local.find(identity: identity);
       return Right(result);
     } on TicketsNotFoundInLocalCacheFailure catch (_) {
      */
 
   @override
-  FutureOr<Either<Failure, void>> findAll() async {
+  FutureOr<Either<Failure, List<TicketsEntity>>> findAll() async {
     try {
       if (await network.online) {
         final result = await remote.findAll();
-        await local.add(tickets: tickets);
 
         return Right(result);
       } else {
@@ -39,7 +38,6 @@ class TicketsRepositoryImpl extends TicketsRepository {
     try {
       if (await network.online) {
         final result = await remote.refresh();
-        await local.add(tickets: tickets);
 
         return Right(result);
       } else {

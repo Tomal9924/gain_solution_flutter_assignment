@@ -1,16 +1,33 @@
 import '../../../../core/shared/shared.dart';
 
 class TicketsEntity extends Equatable {
-  // TODO: implement entity properties
-  final Identity identity;
+  final String id;
+  final String title;
+  final String assignee;
+  final String date;
+  final String priority;
+  final String status;
+  final String category;
+  final bool? isSpam;
 
-  TicketsEntity({
-    required this.identity,
+  const TicketsEntity({
+    required this.id,
+    required this.title,
+    required this.assignee,
+    required this.date,
+    required this.priority,
+    required this.status,
+    required this.category,
+    this.isSpam,
   });
 
   @override
   List<Object?> get props => [
-        // TODO: add entity properties
-        identity,
+        title,
+        assignee,
+        date,
+        priority,
+        status,
+        category,
       ];
 }

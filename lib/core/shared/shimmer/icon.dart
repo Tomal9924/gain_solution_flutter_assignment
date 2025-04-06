@@ -1,14 +1,12 @@
+import 'package:flutter_animate/flutter_animate.dart';
+
 import '../shared.dart';
 
 class ShimmerIcon extends StatelessWidget {
   final double radius;
   final bool delete;
 
-  const ShimmerIcon({
-    super.key,
-    required this.radius,
-    this.delete = false,
-  });
+  const ShimmerIcon({super.key, required this.radius, this.delete = false});
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +20,7 @@ class ShimmerIcon extends StatelessWidget {
             color: delete ? theme.negative : theme.shimmer,
             shape: BoxShape.circle,
           ),
-        )
-            .animate(
-              onComplete: (controller) => controller.repeat(),
-            )
-            .shimmer(
+        ).animate(onComplete: (controller) => controller.repeat()).shimmer(
               color: Colors.transparent,
               colors: [
                 Colors.grey.shade300,

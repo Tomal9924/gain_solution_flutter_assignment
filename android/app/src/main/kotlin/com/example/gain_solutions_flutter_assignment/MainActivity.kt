@@ -1,4 +1,4 @@
-package com.example.gain_solutions_flutter_assignment
+package com.gain_solution.app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -7,58 +7,36 @@ Future<void> _setupDependencies() async {
 
   await Future.wait([
     //! mason:linking-dependencies - DO NOT REMOVE THIS COMMENT --------------------------->
+    dashboardDependencies,
     ticketsDependencies,
   ]);
 }
 
 Future<void> get _core async {
-  sl.registerFactory(
-    () => ThemeBloc(),
-  );
+  sl.registerFactory(() => ThemeBloc());
 
   sl.registerLazySingleton(() => Client());
-  sl.registerLazySingleton(() => InternetConnectionChecker());
+
   sl.registerLazySingleton(
-    () => List<AddressCheckOptions>.unmodifiable(
-      <AddressCheckOptions>[
-        AddressCheckOptions(
-          address: InternetAddress(
-            '1.1.1.1', // CloudFlare
-            type: InternetAddressType.IPv4,
-          ),
-        ),
-        AddressCheckOptions(
-          address: InternetAddress(
-            '2606:4700:4700::1111', // CloudFlare
-            type: InternetAddressType.IPv6,
-          ),
-        ),
-        AddressCheckOptions(
-          address: InternetAddress(
-            '8.8.4.4', // Google
-            type: InternetAddressType.IPv4,
-          ),
-        ),
-        AddressCheckOptions(
-          address: InternetAddress(
-            '2001:4860:4860::8888', // Google
-            type: InternetAddressType.IPv6,
-          ),
-        ),
-        AddressCheckOptions(
-          address: InternetAddress(
-            '208.67.222.222', // OpenDNS
-            type: InternetAddressType.IPv4,
-          ), // OpenDNS
-        ),
-      ],
+    () => InternetConnectionChecker.createInstance(
+      addresses: sl(),
+      statusController: sl(),
+      slowConnectionConfig: const SlowConnectionConfig(
+        enableToCheckForSlowConnection: true,
+        slowConnectionThreshold: Duration(seconds: 1),
+      ),
     ),
+  );
+  sl.registerLazySingleton(
+    () => List<AddressCheckOption>.unmodifiable(<AddressCheckOption>[
+      AddressCheckOption(uri: Uri.parse('https://google.com')),
+    ]),
+  );
+  sl.registerLazySingleton<StreamController<InternetConnectionStatus>>(
+    () => StreamController<InternetConnectionStatus>.broadcast(),
   );
 
   sl.registerLazySingleton<NetworkInfo>(
-    () => NetworkInfoImpl(
-      internetConnectionChecker: sl(),
-      addresses: sl(),
-    ),
+    () => NetworkInfoImpl(internetConnectionChecker: sl()),
   );
 }

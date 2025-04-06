@@ -1,47 +1,34 @@
 import '../shared.dart';
 
-abstract class NetworkInfo implements InternetConnectionChecker {
+abstract class NetworkInfo {
   Future<bool> get online;
 }
 
 class NetworkInfoImpl implements NetworkInfo {
   final InternetConnectionChecker internetConnectionChecker;
 
-  NetworkInfoImpl({
-    required this.internetConnectionChecker,
-    required this.addresses,
-  });
+  NetworkInfoImpl({required this.internetConnectionChecker});
 
   @override
-  List<AddressCheckOptions> addresses;
+  Future<bool> get online async =>
+      await internetConnectionChecker.hasConnection;
 
-  @override
-  Duration get checkInterval => const Duration(seconds: 10);
+  List<AddressCheckOption> get addresses => internetConnectionChecker.addresses;
 
-  @override
-  Duration get checkTimeout => const Duration(seconds: 5);
+  Duration get checkInterval => internetConnectionChecker.checkInterval;
 
-  @override
+  Duration get checkTimeout => internetConnectionChecker.checkTimeout;
+
   Future<InternetConnectionStatus> get connectionStatus =>
       internetConnectionChecker.connectionStatus;
 
-  @override
   Future<bool> get hasConnection => internetConnectionChecker.hasConnection;
 
-  @override
   bool get hasListeners => internetConnectionChecker.hasListeners;
 
-  @override
-  bool get isActivelyChecking => internetConnectionChecker.isActivelyChecking;
-
-  @override
-  Future<bool> get online => internetConnectionChecker.hasConnection;
-
-  @override
-  Future<AddressCheckResult> isHostReachable(AddressCheckOptions options) =>
+  Future<AddressCheckResult> isHostReachable(AddressCheckOption options) =>
       internetConnectionChecker.isHostReachable(options);
 
-  @override
   Stream<InternetConnectionStatus> get onStatusChange =>
       internetConnectionChecker.onStatusChange;
 }

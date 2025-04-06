@@ -1,4 +1,5 @@
 //! mason:linking-failures - DO NOT REMOVE THIS COMMENT --------------------------->
+part 'dashboard.dart';
 part 'tickets.dart';
 
 abstract class Failure {

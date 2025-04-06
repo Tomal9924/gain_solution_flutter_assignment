@@ -18,16 +18,16 @@ class FindAllTicketsLoading extends FindAllTicketsState {
 class FindAllTicketsError extends FindAllTicketsState {
   final Failure failure;
 
-  const FindAllTicketsError({
-    required this.failure,
-  });
+  const FindAllTicketsError({required this.failure});
 
   @override
   List<Object> get props => [failure];
 }
 
 class FindAllTicketsDone extends FindAllTicketsState {
-  const FindAllTicketsDone();
+  final List<TicketsEntity> tickets;
+
+  const FindAllTicketsDone({required this.tickets});
 
   @override
   List<Object> get props => [];

@@ -5,26 +5,18 @@ class TicketsLocalDataSourceImpl extends TicketsLocalDataSource {
   final Map<String, TicketsEntity> _cache = {};
 
   @override
-  FutureOr<void> add({
-    required Identity identity,
-    required TicketsEntity tickets,
-  }) {
-    _cache[identity.guid] = tickets;
+  FutureOr<void> add({required String id, required TicketsEntity tickets}) {
+    _cache[id] = tickets;
   }
 
   @override
-  FutureOr<void> update({
-    required Identity identity,
-    required TicketsEntity tickets,
-  }) {
-    _cache[identity.guid] = tickets;
+  FutureOr<void> update({required String id, required TicketsEntity tickets}) {
+    _cache[id] = tickets;
   }
 
   @override
-  FutureOr<void> remove({
-    required Identity identity,
-  }) {
-    _cache.remove(identity.guid);
+  FutureOr<void> remove({required String id}) {
+    _cache.remove(id);
   }
 
   @override
@@ -33,10 +25,8 @@ class TicketsLocalDataSourceImpl extends TicketsLocalDataSource {
   }
 
   @override
-  FutureOr<TicketsEntity> find({
-    required Identity identity,
-  }) {
-    final item = _cache[identity.guid];
+  FutureOr<TicketsEntity> find({required String id}) {
+    final item = _cache[id];
     if (item == null) {
       throw TicketsNotFoundInLocalCacheFailure();
     }

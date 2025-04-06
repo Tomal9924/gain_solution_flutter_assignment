@@ -1,3 +1,5 @@
+import 'package:flutter_animate/flutter_animate.dart';
+
 import '../shared.dart';
 
 class ShimmerLabel extends StatelessWidget {
@@ -27,15 +29,8 @@ class ShimmerLabel extends StatelessWidget {
             color: delete ? theme.negative : theme.shimmer,
             borderRadius: BorderRadius.circular(radius),
             clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: SizedBox(
-              width: width,
-              height: height,
-            ),
-          )
-              .animate(
-                onComplete: (controller) => controller.repeat(),
-              )
-              .shimmer(
+            child: SizedBox(width: width, height: height),
+          ).animate(onComplete: (controller) => controller.repeat()).shimmer(
                 color: Colors.transparent,
                 colors: [
                   Colors.grey.shade300,

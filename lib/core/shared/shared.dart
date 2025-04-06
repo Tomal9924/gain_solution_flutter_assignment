@@ -19,8 +19,6 @@ export 'remote/response.dart';
 export 'resources/links.dart';
 export 'resources/activity.dart';
 export 'resources/address.dart';
-export 'resources/constants.dart';
-export 'resources/appointment.dart';
 export 'resources/contact.dart';
 export 'resources/identity.dart';
 export 'resources/name.dart';
@@ -36,7 +34,6 @@ export 'dart:convert';
 //! ----------------- 3rd party -----------------
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:flutter/material.dart' hide ThemeExtension;
-export 'package:flutter_animate/flutter_animate.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:go_router/go_router.dart';
 export 'package:equatable/equatable.dart';

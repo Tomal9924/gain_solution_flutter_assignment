@@ -4,11 +4,9 @@ import '../../tickets.dart';
 class FindAllTicketsUseCase {
   final TicketsRepository repository;
 
-  FindAllTicketsUseCase({
-    required this.repository,
-  });
+  FindAllTicketsUseCase({required this.repository});
 
-  FutureOr<Either<Failure, void>> call() async {
+  FutureOr<Either<Failure, List<TicketsEntity>>> call() async {
     return await repository.findAll();
   }
 }

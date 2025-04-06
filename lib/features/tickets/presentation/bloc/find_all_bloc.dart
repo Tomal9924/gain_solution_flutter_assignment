@@ -14,7 +14,7 @@ class FindAllTicketsBloc
       final result = await useCase();
       result.fold(
         (failure) => emit(FindAllTicketsError(failure: failure)),
-        (tickets) => emit(FindAllTicketsDone()),
+        (tickets) => emit(FindAllTicketsDone(tickets: tickets)),
       );
     });
   }
