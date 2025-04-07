@@ -7,6 +7,8 @@ Future<void> _setupDependencies() async {
 
   await Future.wait([
     //! mason:linking-dependencies - DO NOT REMOVE THIS COMMENT --------------------------->
+    profileDependencies,
+    contactsDependencies,
     dashboardDependencies,
     ticketsDependencies,
   ]);

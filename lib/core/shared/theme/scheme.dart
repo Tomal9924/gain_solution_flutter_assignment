@@ -6,6 +6,7 @@ class ThemeScheme {
   final Color backgroundTertiary;
   final Color textPrimary;
   final Color textSecondary;
+  final Color cardColor;
   final Color positive;
   final Color positiveBackground;
   final Color positiveBackgroundTertiary;
@@ -19,6 +20,7 @@ class ThemeScheme {
     required this.backgroundSecondary,
     required this.backgroundTertiary,
     required this.textPrimary,
+    required this.cardColor,
     required this.textSecondary,
     required this.primary,
     required this.positive,
@@ -29,15 +31,14 @@ class ThemeScheme {
     required this.shimmer,
   });
 
-  factory ThemeScheme.find({
-    required ThemeType type,
-  }) {
+  factory ThemeScheme.find({required ThemeType type}) {
     final theme = ThemeScheme(
-      backgroundPrimary: const Color(0xFFfffceb),
+      backgroundPrimary: Colors.white,
       backgroundSecondary: const Color(0xFFfff7d1),
       backgroundTertiary: const Color(0xFFfff3b7),
       textPrimary: const Color(0xFF2d2a32),
-      textSecondary: const Color(0xFF5e5b52),
+      textSecondary: Colors.grey,
+      cardColor: Colors.grey.shade100,
       primary: const Color(0xFFffd500),
       positive: const Color(0xFF3a7d44),
       positiveBackground: const Color.fromARGB(255, 236, 239, 219),

@@ -10,6 +10,7 @@ class TicketsModel extends TicketsEntity {
     required super.priority,
     required super.status,
     required super.category,
+    required super.isSpam,
   });
 
   factory TicketsModel.parse({required Map<String, dynamic> map}) {
@@ -22,6 +23,7 @@ class TicketsModel extends TicketsEntity {
         priority: map['priority'] as String,
         status: map['status'] as String,
         category: map['category'] as String,
+        isSpam: map['isSpam'] as bool,
       );
     } catch (e, stackTrace) {
       throw TicketsModelParseFailure(

@@ -12,44 +12,28 @@ class TicketsFragment extends StatelessWidget {
       builder: (context, state) {
         final theme = state.scheme;
         return Scaffold(
-          appBar: AppBar(
-            title: const Text('Gain Solutions'),
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.filter_list),
-                onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const FilterScreen(),
-                  //   ),
-                  // );
-                },
-              ),
-            ],
-          ),
+          backgroundColor: theme.backgroundPrimary,
           body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search contacts',
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '42 Contacts',
-                    style: TextStyle(color: Colors.grey),
-                  ),
+                child: Row(
+                  children: [
+                    Text(
+                      '124 Tickets',
+                      style: TextStyles.body(
+                        context: context,
+                        color: theme.textPrimary.withValues(alpha: .6),
+                      ).copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    Icon(
+                      Icons.filter_alt_outlined,
+                      size: 24,
+                      color: theme.textPrimary.withValues(alpha: .6),
+                    ),
+                  ],
                 ),
               ),
               Expanded(

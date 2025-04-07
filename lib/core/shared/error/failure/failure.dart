@@ -1,4 +1,6 @@
 //! mason:linking-failures - DO NOT REMOVE THIS COMMENT --------------------------->
+part 'profile.dart';
+part 'contacts.dart';
 part 'dashboard.dart';
 part 'tickets.dart';
 

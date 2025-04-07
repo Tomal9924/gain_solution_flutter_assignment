@@ -1,11 +1,15 @@
 import '../shared/shared.dart';
 //! mason:linking-imports - DO NOT REMOVE THIS COMMENT --------------------------->
+import '../../features/profile/profile.dart';
+import '../../features/contacts/contacts.dart';
 import '../../features/dashboard/dashboard.dart';
 import '../../features/tickets/tickets.dart';
 
 part 'dependencies.dart';
 part 'network_certificates.dart';
 //! mason:linking-dependencies - DO NOT REMOVE THIS COMMENT ---------------------->
+part 'dependencies/profile.dart';
+part 'dependencies/contacts.dart';
 part 'dependencies/dashboard.dart';
 part 'dependencies/tickets.dart';
 

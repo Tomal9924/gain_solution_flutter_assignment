@@ -1,5 +1,8 @@
 import '../../../../core/config/config.dart';
 import '../../../../core/shared/shared.dart';
+import '../../../contacts/contacts.dart';
+import '../../../contacts/presentation/pages/contacts.dart';
+import '../../../profile/profile.dart';
 import '../../../tickets/tickets.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -29,8 +32,13 @@ class _DashboardPageState extends State<DashboardPage> {
             (context) => sl<FindAllTicketsBloc>()..add(const FindAllTickets()),
         child: const TicketsFragment(),
       ),
-      const TicketsFragment(),
-      const TicketsFragment(),
+      BlocProvider(
+        create:
+            (context) =>
+                sl<FindAllContactsBloc>()..add(const FindAllContacts()),
+        child: const ContactsFragment(),
+      ),
+      const ProfileFragment(),
     ];
   }
 
@@ -42,6 +50,27 @@ class _DashboardPageState extends State<DashboardPage> {
         return Scaffold(
           backgroundColor: theme.backgroundPrimary,
           body: fragments.elementAt(currentIndex),
+          appBar: AppBar(
+            backgroundColor: theme.backgroundPrimary,
+            elevation: 0,
+            centerTitle: false,
+            title: Padding(
+              padding: EdgeInsets.only(left: 16),
+              child: Text(
+                'Gain Solutions',
+                style: TextStyles.subHeadline(
+                  context: context,
+                  color: theme.textPrimary,
+                ).copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.notifications_active_outlined),
+                onPressed: () {},
+              ),
+            ],
+          ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             selectedItemColor: theme.primary,

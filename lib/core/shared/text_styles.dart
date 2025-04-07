@@ -5,7 +5,7 @@ class TextStyles {
     required BuildContext context,
     required Color color,
   }) {
-    return GoogleFonts.rubik(
+    return GoogleFonts.montserrat(
       textStyle: Theme.of(context).textTheme.labelSmall?.copyWith(color: color),
     );
   }
@@ -14,20 +14,17 @@ class TextStyles {
     required BuildContext context,
     required Color color,
   }) {
-    return GoogleFonts.rubik(
+    return GoogleFonts.montserrat(
       textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(color: color),
     );
   }
 
-  static TextStyle body({
-    required BuildContext context,
-    required Color color,
-  }) {
-    return GoogleFonts.rubik(
-      textStyle: Theme.of(context)
-          .textTheme
-          .bodyMedium
-          ?.copyWith(color: color, fontWeight: FontWeight.normal),
+  static TextStyle body({required BuildContext context, required Color color}) {
+    return GoogleFonts.montserrat(
+      textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+        color: color,
+        fontWeight: FontWeight.normal,
+      ),
     );
   }
 
@@ -35,11 +32,10 @@ class TextStyles {
     required BuildContext context,
     required Color color,
   }) {
-    return GoogleFonts.rubik(
-      textStyle: Theme.of(context)
-          .textTheme
-          .titleSmall
-          ?.copyWith(color: color, height: 1),
+    return GoogleFonts.montserrat(
+      textStyle: Theme.of(
+        context,
+      ).textTheme.titleSmall?.copyWith(color: color, height: 1),
     );
   }
 
@@ -47,11 +43,11 @@ class TextStyles {
     required BuildContext context,
     required Color color,
   }) {
-    return GoogleFonts.rubik(
-      textStyle: Theme.of(context)
-          .textTheme
-          .titleMedium
-          ?.copyWith(color: color, fontWeight: FontWeight.bold),
+    return GoogleFonts.montserrat(
+      textStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
+        color: color,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 
@@ -59,11 +55,11 @@ class TextStyles {
     required BuildContext context,
     required Color color,
   }) {
-    return GoogleFonts.rubik(
-      textStyle: Theme.of(context)
-          .textTheme
-          .titleLarge
-          ?.copyWith(color: color, fontWeight: FontWeight.w300),
+    return GoogleFonts.montserrat(
+      textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
+        color: color,
+        fontWeight: FontWeight.w300,
+      ),
     );
   }
 
@@ -71,11 +67,11 @@ class TextStyles {
     required BuildContext context,
     required Color color,
   }) {
-    return GoogleFonts.rubik(
-      textStyle: Theme.of(context)
-          .textTheme
-          .headlineSmall
-          ?.copyWith(color: color, fontWeight: FontWeight.w300),
+    return GoogleFonts.montserrat(
+      textStyle: Theme.of(context).textTheme.headlineSmall?.copyWith(
+        color: color,
+        fontWeight: FontWeight.w300,
+      ),
     );
   }
 
@@ -83,21 +79,21 @@ class TextStyles {
     required BuildContext context,
     required Color color,
   }) {
-    return GoogleFonts.rubik(
-      textStyle: Theme.of(context)
-          .textTheme
-          .headlineMedium
-          ?.copyWith(color: color, fontWeight: FontWeight.w400),
+    return GoogleFonts.montserrat(
+      textStyle: Theme.of(context).textTheme.headlineMedium?.copyWith(
+        color: color,
+        fontWeight: FontWeight.w400,
+      ),
     );
   }
 
   static TextStyle input(BuildContext context, Color color) {
     return GoogleFonts.mavenPro(
       textStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
-            color: color,
-            fontWeight: FontWeight.normal,
-            height: 1,
-          ),
+        color: color,
+        fontWeight: FontWeight.normal,
+        height: 1,
+      ),
     );
   }
 }
