@@ -22,7 +22,6 @@ class TicketCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             color: theme.cardColor,
           ),
-
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

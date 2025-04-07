@@ -22,9 +22,9 @@ class TextStyles {
   static TextStyle body({required BuildContext context, required Color color}) {
     return GoogleFonts.montserrat(
       textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-        color: color,
-        fontWeight: FontWeight.normal,
-      ),
+            color: color,
+            fontWeight: FontWeight.normal,
+          ),
     );
   }
 
@@ -45,9 +45,9 @@ class TextStyles {
   }) {
     return GoogleFonts.montserrat(
       textStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
-        color: color,
-        fontWeight: FontWeight.bold,
-      ),
+            color: color,
+            fontWeight: FontWeight.bold,
+          ),
     );
   }
 
@@ -57,9 +57,9 @@ class TextStyles {
   }) {
     return GoogleFonts.montserrat(
       textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
-        color: color,
-        fontWeight: FontWeight.w300,
-      ),
+            color: color,
+            fontWeight: FontWeight.w300,
+          ),
     );
   }
 
@@ -69,9 +69,9 @@ class TextStyles {
   }) {
     return GoogleFonts.montserrat(
       textStyle: Theme.of(context).textTheme.headlineSmall?.copyWith(
-        color: color,
-        fontWeight: FontWeight.w300,
-      ),
+            color: color,
+            fontWeight: FontWeight.w300,
+          ),
     );
   }
 
@@ -81,19 +81,19 @@ class TextStyles {
   }) {
     return GoogleFonts.montserrat(
       textStyle: Theme.of(context).textTheme.headlineMedium?.copyWith(
-        color: color,
-        fontWeight: FontWeight.w400,
-      ),
+            color: color,
+            fontWeight: FontWeight.w400,
+          ),
     );
   }
 
   static TextStyle input(BuildContext context, Color color) {
     return GoogleFonts.mavenPro(
       textStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
-        color: color,
-        fontWeight: FontWeight.normal,
-        height: 1,
-      ),
+            color: color,
+            fontWeight: FontWeight.normal,
+            height: 1,
+          ),
     );
   }
 }

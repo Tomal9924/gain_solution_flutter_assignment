@@ -23,12 +23,12 @@ class TicketsEntity extends Equatable {
 
   @override
   List<Object?> get props => [
-    title,
-    assignee,
-    date,
-    priority,
-    status,
-    category,
-    isSpam,
-  ];
+        title,
+        assignee,
+        date,
+        priority,
+        status,
+        category,
+        isSpam,
+      ];
 }

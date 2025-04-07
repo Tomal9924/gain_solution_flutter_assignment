@@ -1,6 +1,7 @@
 import 'package:gain_solutions_flutter_assignment/features/tickets/tickets.dart';
 
 import '../../../../core/shared/shared.dart';
+import '../../../filter/presentation/pages/filter.dart';
 import '../widgets/item.dart';
 
 class TicketsFragment extends StatelessWidget {
@@ -28,10 +29,15 @@ class TicketsFragment extends StatelessWidget {
                       ).copyWith(fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
-                    Icon(
-                      Icons.filter_alt_outlined,
-                      size: 24,
-                      color: theme.textPrimary.withValues(alpha: .6),
+                    InkWell(
+                      onTap: () {
+                        context.pushNamed(FilterPage.name);
+                      },
+                      child: Icon(
+                        Icons.filter_alt_outlined,
+                        size: 24,
+                        color: theme.textPrimary.withValues(alpha: .6),
+                      ),
                     ),
                   ],
                 ),

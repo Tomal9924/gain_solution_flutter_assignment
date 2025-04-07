@@ -1,4 +1,5 @@
 //! mason:linking-failures - DO NOT REMOVE THIS COMMENT --------------------------->
+part 'filter.dart';
 part 'profile.dart';
 part 'contacts.dart';
 part 'dashboard.dart';

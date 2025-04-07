@@ -42,7 +42,7 @@ class ThemeScheme {
       iconColor: const Color(0xFF2d2a32).withValues(alpha: .5),
       textSecondary: Colors.grey,
       cardColor: Colors.grey.shade100,
-      primary: const Color(0xFFffd500),
+      primary: const Color(0xFF4D8CFF),
       positive: const Color(0xFF3a7d44),
       positiveBackground: const Color.fromARGB(255, 236, 239, 219),
       positiveBackgroundTertiary: const Color.fromARGB(255, 203, 221, 196),

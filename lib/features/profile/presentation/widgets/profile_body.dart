@@ -58,10 +58,6 @@ class ProfileBody extends StatelessWidget {
                 ).copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 24),
-
-              const SizedBox(height: 16),
-              const Text('Manager'),
-              const SizedBox(height: 16),
             ],
           ),
         );

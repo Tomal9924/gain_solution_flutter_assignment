@@ -112,8 +112,8 @@ class _ProfileFragmentState extends State<ProfileFragment> {
                     vertical: 8,
                   ),
                   itemCount: roles.length,
-                  separatorBuilder:
-                      (context, index) => const SizedBox(width: 12),
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(width: 12),
                   itemBuilder: (context, index) {
                     final role = roles[index];
                     return Container(
