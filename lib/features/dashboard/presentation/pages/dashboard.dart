@@ -50,27 +50,44 @@ class _DashboardPageState extends State<DashboardPage> {
         return Scaffold(
           backgroundColor: theme.backgroundPrimary,
           body: fragments.elementAt(currentIndex),
-          appBar: AppBar(
-            backgroundColor: theme.backgroundPrimary,
-            elevation: 0,
-            centerTitle: false,
-            title: Padding(
-              padding: EdgeInsets.only(left: 16),
-              child: Text(
-                'Gain Solutions',
-                style: TextStyles.subHeadline(
-                  context: context,
-                  color: theme.textPrimary,
-                ).copyWith(fontWeight: FontWeight.bold),
-              ),
-            ),
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.notifications_active_outlined),
-                onPressed: () {},
-              ),
-            ],
-          ),
+          appBar:
+              currentIndex == 2
+                  ? AppBar(
+                    backgroundColor: theme.backgroundPrimary,
+                    elevation: 0,
+                    centerTitle: false,
+                    title: Padding(
+                      padding: EdgeInsets.only(left: 16),
+                      child: Text(
+                        'My Profile',
+                        style: TextStyles.subHeadline(
+                          context: context,
+                          color: theme.textPrimary,
+                        ).copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  )
+                  : AppBar(
+                    backgroundColor: theme.backgroundPrimary,
+                    elevation: 0,
+                    centerTitle: false,
+                    title: Padding(
+                      padding: EdgeInsets.only(left: 16),
+                      child: Text(
+                        'Gain Solutions',
+                        style: TextStyles.subHeadline(
+                          context: context,
+                          color: theme.textPrimary,
+                        ).copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    actions: [
+                      IconButton(
+                        icon: const Icon(Icons.notifications_active_outlined),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             selectedItemColor: theme.primary,

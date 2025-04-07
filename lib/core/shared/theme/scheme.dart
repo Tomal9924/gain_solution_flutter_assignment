@@ -5,6 +5,7 @@ class ThemeScheme {
   final Color backgroundSecondary;
   final Color backgroundTertiary;
   final Color textPrimary;
+  final Color iconColor;
   final Color textSecondary;
   final Color cardColor;
   final Color positive;
@@ -20,6 +21,7 @@ class ThemeScheme {
     required this.backgroundSecondary,
     required this.backgroundTertiary,
     required this.textPrimary,
+    required this.iconColor,
     required this.cardColor,
     required this.textSecondary,
     required this.primary,
@@ -37,6 +39,7 @@ class ThemeScheme {
       backgroundSecondary: const Color(0xFFfff7d1),
       backgroundTertiary: const Color(0xFFfff3b7),
       textPrimary: const Color(0xFF2d2a32),
+      iconColor: const Color(0xFF2d2a32).withValues(alpha: .5),
       textSecondary: Colors.grey,
       cardColor: Colors.grey.shade100,
       primary: const Color(0xFFffd500),
