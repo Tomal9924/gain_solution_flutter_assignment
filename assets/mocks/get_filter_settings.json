@@ -1,0 +1,43 @@
+{
+  "filters": [
+    {
+      "id": "brand",
+      "label": "Brand",
+      "type": "checkbox",
+      "enabled": true,
+      "options": [
+        { "label": "Gains", "value": "gains" },
+        { "label": "GainSolution", "value": "gainsolution" },
+        { "label": "GainHQ", "value": "gainhq" }
+      ]
+    },
+    {
+      "id": "priority",
+      "label": "Priority",
+      "type": "dropdown",
+      "enabled": true,
+      "options": [
+        { "label": "High", "value": "high" },
+        { "label": "Medium", "value": "medium" },
+        { "label": "Low", "value": "low" }
+      ]
+    },
+    {
+      "id": "tags",
+      "label": "Tags",
+      "type": "searchable-tags",
+      "enabled": true,
+      "options": [
+        { "label": "Tag one", "value": "tag_one" },
+        { "label": "Tag two", "value": "tag_two" },
+        { "label": "Tag three wit long text", "value": "tag_three" },
+        { "label": "Tag four", "value": "tag_four" },
+        { "label": "Tag five", "value": "tag_five" },
+        { "label": "Tag six with long text", "value": "tag_six" },
+        { "label": "Tag seven", "value": "tag_seven" }
+      ]
+    }
+  ],
+  "success": true,
+  "error": null
+}

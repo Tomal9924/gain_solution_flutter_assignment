@@ -1,6 +1,7 @@
 import 'package:gain_solutions_flutter_assignment/features/dashboard/presentation/pages/dashboard.dart';
 
 import '../../features/filter/filter.dart';
+import '../config/config.dart';
 import 'shared.dart';
 
 final router = GoRouter(
@@ -14,7 +15,10 @@ final router = GoRouter(
     GoRoute(
       path: FilterPage.path,
       name: FilterPage.name,
-      builder: (context, state) => const FilterPage(),
+      builder: (context, state) => BlocProvider(
+        create: (context) => sl<FindAllFilterBloc>()..add(const FindAllFilter()),
+        child: const FilterPage(),
+      ),
     ),
   ],
 );

@@ -14,8 +14,8 @@ class ContactsFragment extends StatelessWidget {
           backgroundColor: theme.backgroundPrimary,
           body: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -39,7 +39,7 @@ class ContactsFragment extends StatelessWidget {
                         },
                       );
                     } else {
-                      return Center(child: Text("Something went wrong!"));
+                      return const Center(child: Text("Something went wrong!"));
                     }
                   },
                 ),

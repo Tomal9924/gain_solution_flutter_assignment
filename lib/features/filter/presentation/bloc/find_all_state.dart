@@ -27,7 +27,10 @@ class FindAllFilterError extends FindAllFilterState {
 }
 
 class FindAllFilterDone extends FindAllFilterState {
-  const FindAllFilterDone();
+  final List<FilterEntity> filters;
+  const FindAllFilterDone({
+    required this.filters,
+  });
 
   @override
   List<Object> get props => [];

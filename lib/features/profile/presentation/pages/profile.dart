@@ -75,7 +75,7 @@ class _ProfileFragmentState extends State<ProfileFragment> {
                       const Spacer(),
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.edit_square, size: 24),
+                        icon: const Icon(Icons.edit_square, size: 24),
                       ),
                     ],
                   ),
@@ -104,7 +104,7 @@ class _ProfileFragmentState extends State<ProfileFragment> {
                 ),
               ),
               SizedBox(
-                height: context.height * .21,
+                height: context.height * .23,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(
@@ -112,8 +112,7 @@ class _ProfileFragmentState extends State<ProfileFragment> {
                     vertical: 8,
                   ),
                   itemCount: roles.length,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(width: 12),
+                  separatorBuilder: (context, index) => const SizedBox(width: 12),
                   itemBuilder: (context, index) {
                     final role = roles[index];
                     return Container(

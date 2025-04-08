@@ -8,7 +8,7 @@ class FindFilterUseCase {
     required this.repository,
   });
 
-  FutureOr<Either<Failure, void>> call() async {
+  FutureOr<Either<Failure, List<FilterEntity>>> call() async {
     return await repository.find();
   }
 }

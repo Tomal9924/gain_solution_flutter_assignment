@@ -5,15 +5,18 @@ part 'find_all_event.dart';
 part 'find_all_state.dart';
 
 class FindAllFilterBloc extends Bloc<FindAllFilterEvent, FindAllFilterState> {
-  final FindAllFilterUseCase useCase;
-  FindAllFilterBloc({required this.useCase})
-      : super(const FindAllFilterInitial()) {
+  final FindFilterUseCase useCase;
+  FindAllFilterBloc({required this.useCase}) : super(const FindAllFilterInitial()) {
     on<FindAllFilter>((event, emit) async {
       emit(const FindAllFilterLoading());
       final result = await useCase();
       result.fold(
-        (failure) => emit(FindAllFilterError(failure: failure)),
-        (filter) => emit(FindAllFilterDone()),
+        (failure) {
+          if (!isClosed) {
+            emit(FindAllFilterError(failure: failure));
+          }
+        },
+        (filter) => emit(FindAllFilterDone(filters: filter)),
       );
     });
   }

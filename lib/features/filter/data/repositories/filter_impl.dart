@@ -17,7 +17,7 @@ class FilterRepositoryImpl extends FilterRepository {
      */
 
   @override
-  FutureOr<Either<Failure, void>> find() async {
+  FutureOr<Either<Failure, List<FilterEntity>>> find() async {
     try {
       if (await network.online) {
         final result = await remote.find();
