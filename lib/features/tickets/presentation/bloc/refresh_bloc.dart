@@ -14,7 +14,7 @@ class RefreshTicketsBloc
       final result = await useCase();
       result.fold(
         (failure) => emit(RefreshTicketsError(failure: failure)),
-        (tickets) => emit(RefreshTicketsDone()),
+        (tickets) => emit(const RefreshTicketsDone()),
       );
     });
   }

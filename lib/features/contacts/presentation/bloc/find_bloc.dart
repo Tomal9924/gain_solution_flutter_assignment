@@ -13,7 +13,7 @@ class FindContactsBloc extends Bloc<FindContactsEvent, FindContactsState> {
       final result = await useCase();
       result.fold(
         (failure) => emit(FindContactsError(failure: failure)),
-        (contacts) => emit(FindContactsDone()),
+        (contacts) => emit(const FindContactsDone()),
       );
     });
   }

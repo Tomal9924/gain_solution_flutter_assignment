@@ -12,7 +12,7 @@ class FindProfileBloc extends Bloc<FindProfileEvent, FindProfileState> {
       final result = await useCase();
       result.fold(
         (failure) => emit(FindProfileError(failure: failure)),
-        (profile) => emit(FindProfileDone()),
+        (profile) => emit(const FindProfileDone()),
       );
     });
   }

@@ -3,7 +3,7 @@ import '../../profile.dart';
 
 class ProfileModel extends ProfileEntity {
   // TODO: implement model properties
-  ProfileModel({
+  const ProfileModel({
     required super.identity,
   });
 

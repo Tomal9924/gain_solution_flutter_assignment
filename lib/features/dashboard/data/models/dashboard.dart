@@ -3,7 +3,7 @@ import '../../dashboard.dart';
 
 class DashboardModel extends DashboardEntity {
   // TODO: implement model properties
-  DashboardModel({
+  const DashboardModel({
     required super.identity,
   });
 

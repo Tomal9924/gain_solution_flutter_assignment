@@ -4,7 +4,7 @@ class DashboardEntity extends Equatable {
   // TODO: implement entity properties
   final Identity identity;
 
-  DashboardEntity({
+  const DashboardEntity({
     required this.identity,
   });
 

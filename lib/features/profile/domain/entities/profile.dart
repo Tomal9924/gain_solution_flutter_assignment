@@ -4,7 +4,7 @@ class ProfileEntity extends Equatable {
   // TODO: implement entity properties
   final Identity identity;
 
-  ProfileEntity({
+  const ProfileEntity({
     required this.identity,
   });
 

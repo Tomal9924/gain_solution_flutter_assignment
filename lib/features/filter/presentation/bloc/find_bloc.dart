@@ -12,7 +12,7 @@ class FindFilterBloc extends Bloc<FindFilterEvent, FindFilterState> {
       final result = await useCase();
       result.fold(
         (failure) => emit(FindFilterError(failure: failure)),
-        (filter) => emit(FindFilterDone()),
+        (filter) => emit(const FindFilterDone()),
       );
     });
   }

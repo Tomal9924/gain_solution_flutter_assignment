@@ -57,7 +57,7 @@ class TicketsFragment extends StatelessWidget {
                         },
                       );
                     } else {
-                      return Center(child: Text("Something went wrong!"));
+                      return const Center(child: Text("Something went wrong!"));
                     }
                   },
                 ),

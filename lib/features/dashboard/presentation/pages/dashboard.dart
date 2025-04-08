@@ -1,7 +1,6 @@
 import '../../../../core/config/config.dart';
 import '../../../../core/shared/shared.dart';
 import '../../../contacts/contacts.dart';
-import '../../../contacts/presentation/pages/contacts.dart';
 import '../../../profile/profile.dart';
 import '../../../tickets/tickets.dart';
 
@@ -55,7 +54,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   elevation: 0,
                   centerTitle: false,
                   title: Padding(
-                    padding: EdgeInsets.only(left: 16),
+                    padding: const EdgeInsets.only(left: 16),
                     child: Text(
                       'My Profile',
                       style: TextStyles.subHeadline(
@@ -70,7 +69,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   elevation: 0,
                   centerTitle: false,
                   title: Padding(
-                    padding: EdgeInsets.only(left: 16),
+                    padding: const EdgeInsets.only(left: 16),
                     child: Text(
                       'Gain Solutions',
                       style: TextStyles.subHeadline(
