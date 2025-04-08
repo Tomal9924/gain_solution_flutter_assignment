@@ -6,7 +6,11 @@ class FindAllContactsUseCase {
 
   FindAllContactsUseCase({required this.repository});
 
-  FutureOr<Either<Failure, List<ContactsEntity>>> call() async {
-    return await repository.findAll();
+  FutureOr<Either<Failure, List<ContactsEntity>>> call({
+    required String? query,
+  }) async {
+    return await repository.findAll(
+      query: query,
+    );
   }
 }

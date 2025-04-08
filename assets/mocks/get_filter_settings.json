@@ -4,7 +4,7 @@
       "id": "brand",
       "label": "Brand",
       "type": "checkbox",
-      "enabled": true,
+      "enabled": false,
       "options": [
         { "label": "Gains", "value": "gains" },
         { "label": "GainSolution", "value": "gainsolution" },

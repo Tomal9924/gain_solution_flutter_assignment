@@ -1,0 +1,14 @@
+{
+    "result":[
+      {
+        "guid": "123198423",
+        "name": "Michele Kahnwald",
+        "email": "michel@email.com",
+        "phone": "+12 34 56 78 90",
+        "address": "12A, Lillistrom, Norway",
+        "avatar": "https://example.com/avatar1.jpg"
+      }
+    ],
+      "success": true,
+      "error": null
+}

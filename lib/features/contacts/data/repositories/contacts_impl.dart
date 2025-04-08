@@ -19,10 +19,14 @@ class ContactsRepositoryImpl extends ContactsRepository {
      */
 
   @override
-  FutureOr<Either<Failure, List<ContactsEntity>>> findAll() async {
+  FutureOr<Either<Failure, List<ContactsEntity>>> findAll({
+    required String? query,
+  }) async {
     try {
       if (await network.online) {
-        final result = await remote.findAll();
+        final result = await remote.findAll(
+          query: query,
+        );
         //await local.add(contacts: contacts);
 
         return Right(result);

@@ -8,7 +8,8 @@ abstract class FindAllContactsEvent extends Equatable {
 }
 
 class FindAllContacts extends FindAllContactsEvent {
-  const FindAllContacts();
+  final String? query;
+  const FindAllContacts({required this.query});
   @override
   List<Object> get props => [];
 }

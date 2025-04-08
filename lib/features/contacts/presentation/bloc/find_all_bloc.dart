@@ -11,7 +11,9 @@ class FindAllContactsBloc
       : super(const FindAllContactsInitial()) {
     on<FindAllContacts>((event, emit) async {
       emit(const FindAllContactsLoading());
-      final result = await useCase();
+      final result = await useCase(
+        query: event.query,
+      );
       result.fold(
         (failure) => emit(FindAllContactsError(failure: failure)),
         (contacts) => emit(FindAllContactsDone(contacts: contacts)),

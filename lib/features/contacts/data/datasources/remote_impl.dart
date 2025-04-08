@@ -7,10 +7,14 @@ class ContactsRemoteDataSourceImpl extends ContactsRemoteDataSource {
   ContactsRemoteDataSourceImpl({required this.client});
 
   @override
-  FutureOr<List<ContactsModel>> findAll() async {
+  FutureOr<List<ContactsModel>> findAll({
+    required String? query,
+  }) async {
     try {
       final payload = await rootBundle.loadString(
-        'assets/mocks/get_all_contacts.json',
+        query == null
+            ? 'assets/mocks/get_all_contacts.json'
+            : 'assets/mocks/get_filtered_contact.json',
       );
       final Response response = Response(payload, HttpStatus.ok);
       if (response.statusCode == HttpStatus.ok) {

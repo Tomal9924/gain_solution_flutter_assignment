@@ -33,7 +33,7 @@ class _DashboardPageState extends State<DashboardPage> {
       ),
       BlocProvider(
         create: (context) =>
-            sl<FindAllContactsBloc>()..add(const FindAllContacts()),
+            sl<FindAllContactsBloc>()..add(const FindAllContacts(query: null)),
         child: const ContactsFragment(),
       ),
       const ProfileFragment(),
