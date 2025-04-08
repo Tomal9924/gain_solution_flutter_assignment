@@ -1,3 +1,5 @@
+import 'package:flutter_animate/flutter_animate.dart';
+
 import '../../../../core/config/config.dart';
 import '../../../../core/shared/shared.dart';
 import '../../../contacts/contacts.dart';
@@ -102,16 +104,25 @@ class _DashboardPageState extends State<DashboardPage> {
                                 minHeight: 8,
                               ),
                               child: Center(
-                                  child: Text(
-                                '3',
-                                style: TextStyles.caption(
-                                        context: context,
-                                        color: theme.backgroundPrimary)
-                                    .copyWith(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 10),
-                              )),
-                            ),
+                                child: Text(
+                                  '3',
+                                  style: TextStyles.caption(
+                                          context: context,
+                                          color: theme.backgroundPrimary)
+                                      .copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 10),
+                                ),
+                              ),
+                            )
+                                .animate(
+                                  onPlay: (controller) => controller.repeat(),
+                                  delay: const Duration(seconds: 1),
+                                )
+                                .shakeX(
+                                  hz: .4,
+                                  duration: const Duration(microseconds: 100),
+                                ),
                           ),
                         ],
                       ),

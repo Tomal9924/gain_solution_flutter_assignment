@@ -15,7 +15,8 @@ class TextStyles {
     required Color color,
   }) {
     return GoogleFonts.montserrat(
-      textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(color: color),
+      textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+          color: color, fontWeight: FontWeight.w600, fontSize: 10.sp),
     );
   }
 
@@ -23,7 +24,8 @@ class TextStyles {
     return GoogleFonts.montserrat(
       textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
             color: color,
-            fontWeight: FontWeight.normal,
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w600,
           ),
     );
   }

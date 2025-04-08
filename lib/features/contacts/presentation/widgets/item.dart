@@ -96,7 +96,7 @@ class ContactCard extends StatelessWidget {
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 16),
+                const SizedBox(height: 6),
                 Row(
                   children: [
                     Icon(
