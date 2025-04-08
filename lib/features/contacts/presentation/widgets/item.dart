@@ -54,7 +54,43 @@ class ContactCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                Icon(Icons.more_vert, color: theme.textPrimary),
+                PopupMenuButton<String>(
+                  icon: Icon(Icons.more_vert, color: theme.textPrimary),
+                  color: theme.backgroundPrimary,
+                  padding: const EdgeInsets.all(0),
+                  menuPadding: const EdgeInsets.all(0),
+                  popUpAnimationStyle: AnimationStyle.noAnimation,
+                  onSelected: (value) {},
+                  itemBuilder: (BuildContext context) =>
+                      <PopupMenuEntry<String>>[
+                    PopupMenuItem<String>(
+                      value: 'edit',
+                      child: Text(
+                        'Edit',
+                        style: TextStyles.caption(
+                          context: context,
+                          color: theme.textPrimary,
+                        ),
+                      ),
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'view_tickets',
+                      child: Text('View Tickets',
+                          style: TextStyles.caption(
+                            context: context,
+                            color: theme.textPrimary,
+                          )),
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'delete',
+                      child: Text('Delete',
+                          style: TextStyles.caption(
+                            context: context,
+                            color: theme.textPrimary,
+                          )),
+                    ),
+                  ],
+                ),
               ],
             ),
             subtitle: Column(

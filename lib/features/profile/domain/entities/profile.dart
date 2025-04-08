@@ -1,7 +1,6 @@
 import '../../../../core/shared/shared.dart';
 
 class ProfileEntity extends Equatable {
-  // TODO: implement entity properties
   final Identity identity;
 
   const ProfileEntity({
@@ -10,7 +9,6 @@ class ProfileEntity extends Equatable {
 
   @override
   List<Object?> get props => [
-        // TODO: add entity properties
         identity,
       ];
 }

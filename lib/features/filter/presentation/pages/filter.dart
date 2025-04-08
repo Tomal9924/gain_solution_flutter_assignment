@@ -48,7 +48,8 @@ class FilterPage extends StatelessWidget {
                 return Center(
                   child: Text(
                     state.failure.message,
-                    style: TextStyles.caption(context: context, color: theme.textPrimary),
+                    style: TextStyles.caption(
+                        context: context, color: theme.textPrimary),
                   ),
                 );
               } else if (state is FindAllFilterLoading) {
@@ -64,7 +65,8 @@ class FilterPage extends StatelessWidget {
                         .where((f) => f.enabled)
                         .map((filter) => Padding(
                               padding: const EdgeInsets.only(bottom: 24),
-                              child: _buildDynamicFilter(filter, context, theme),
+                              child:
+                                  _buildDynamicFilter(filter, context, theme),
                             ))
                         .toList(),
                   ),
@@ -79,7 +81,8 @@ class FilterPage extends StatelessWidget {
     );
   }
 
-  Widget _buildDynamicFilter(FilterEntity filter, BuildContext context, ThemeScheme theme) {
+  Widget _buildDynamicFilter(
+      FilterEntity filter, BuildContext context, ThemeScheme theme) {
     switch (filter.type) {
       case 'checkbox':
         return Column(
@@ -87,7 +90,8 @@ class FilterPage extends StatelessWidget {
           children: [
             Text(
               filter.label,
-              style: TextStyles.body(context: context, color: theme.textPrimary),
+              style:
+                  TextStyles.body(context: context, color: theme.textPrimary),
             ),
             BrandCheckbox(
               filter: filter,
@@ -104,7 +108,8 @@ class FilterPage extends StatelessWidget {
     }
   }
 
-  Widget _buildDropdownFilter(FilterEntity filter, BuildContext context, ThemeScheme theme) {
+  Widget _buildDropdownFilter(
+      FilterEntity filter, BuildContext context, ThemeScheme theme) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -126,14 +131,17 @@ class FilterPage extends StatelessWidget {
           ),
           hint: Text(
             'Select ${filter.label.toLowerCase()}',
-            style: TextStyles.body(context: context, color: theme.textPrimary.withOpacity(0.6)),
+            style: TextStyles.body(
+                context: context,
+                color: theme.textPrimary.withValues(alpha: 0.6)),
           ),
           items: filter.options.map((option) {
             return DropdownMenuItem(
               value: option.value,
               child: Text(
                 option.label,
-                style: TextStyles.caption(context: context, color: theme.textPrimary),
+                style: TextStyles.caption(
+                    context: context, color: theme.textPrimary),
               ),
             );
           }).toList(),

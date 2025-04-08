@@ -2,7 +2,6 @@ import '../../../../core/shared/shared.dart';
 import '../../profile.dart';
 
 class ProfileModel extends ProfileEntity {
-  // TODO: implement model properties
   const ProfileModel({
     required super.identity,
   });
@@ -11,7 +10,6 @@ class ProfileModel extends ProfileEntity {
     required Map<String, dynamic> map,
   }) {
     try {
-      // TODO: implement parse
       throw UnimplementedError();
     } catch (e, stackTrace) {
       throw ProfileModelParseFailure(
