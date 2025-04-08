@@ -28,13 +28,36 @@ class _ContactsFragmentState extends State<ContactsFragment> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                      '42 Contacts',
-                      style: TextStyle(color: Colors.grey),
+                    child:
+                        BlocBuilder<FindAllContactsBloc, FindAllContactsState>(
+                      builder: (context, state) {
+                        if (state is FindAllContactsDone) {
+                          return Text(
+                            '${state.contacts.length} Contacts',
+                            style: TextStyles.caption(
+                              context: context,
+                              color: theme.textPrimary,
+                            ),
+                          );
+                        } else if (state is FindAllContactsLoading) {
+                          return CircularProgressIndicator(
+                            color: theme.iconColor,
+                            strokeWidth: 1,
+                          );
+                        } else {
+                          return Text(
+                            '0 Contacts',
+                            style: TextStyles.caption(
+                              context: context,
+                              color: theme.textPrimary,
+                            ),
+                          );
+                        }
+                      },
                     ),
                   ),
                 ),

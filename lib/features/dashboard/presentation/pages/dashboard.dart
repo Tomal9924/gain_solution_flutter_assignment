@@ -79,10 +79,43 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                   ),
                   actions: [
-                    IconButton(
-                      icon: const Icon(Icons.notifications_active_outlined),
-                      onPressed: () {},
-                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Stack(
+                        children: [
+                          Icon(
+                            Icons.notifications_none_outlined,
+                            size: 24,
+                            color: theme.textPrimary.withValues(alpha: .8),
+                          ),
+                          Positioned(
+                            top: -3,
+                            right: 1,
+                            child: Container(
+                              padding: const EdgeInsets.all(3),
+                              decoration: const BoxDecoration(
+                                color: Colors.red,
+                                shape: BoxShape.circle,
+                              ),
+                              constraints: const BoxConstraints(
+                                minWidth: 8,
+                                minHeight: 8,
+                              ),
+                              child: Center(
+                                  child: Text(
+                                '3',
+                                style: TextStyles.caption(
+                                        context: context,
+                                        color: theme.backgroundPrimary)
+                                    .copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
           bottomNavigationBar: BottomNavigationBar(

@@ -29,7 +29,21 @@ class ContactCard extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CircleAvatar(backgroundImage: NetworkImage(contact.avatar)),
+                    CachedNetworkImage(
+                      imageUrl: contact.avatar,
+                      height: 40,
+                      width: 40,
+                      placeholder: (context, url) => const ShimmerLabel(
+                        width: 40,
+                        height: 40,
+                      ),
+                      imageBuilder: (context, imageProvider) => CircleAvatar(
+                        backgroundImage: imageProvider,
+                      ),
+                      errorWidget: (context, url, error) => const Icon(
+                        Icons.person,
+                      ),
+                    ),
                     const SizedBox(width: 12),
                     Text(
                       contact.name,

@@ -14,19 +14,22 @@ class _ProfileFragmentState extends State<ProfileFragment> {
       "title": "Manager",
       "group": "Codecanyeon support",
       "manager": "Jonaus Kahnwald",
-      "avatar": "https://via.placeholder.com/150", // Replace with real image
+      "avatar":
+          "https://thumbs.dreamstime.com/b/portrait-handsome-guy-smiling-camera-closeup-standing-over-gray-wall-100294160.jpg",
     },
     {
       "title": "Agent",
       "group": "Laravel team",
       "manager": "Lana Smith",
-      "avatar": "https://via.placeholder.com/150",
+      "avatar":
+          "https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg",
     },
     {
       "title": "Reviewer",
       "group": "UI Testing",
       "manager": "Sophie Taylor",
-      "avatar": "https://via.placeholder.com/150",
+      "avatar":
+          "https://t3.ftcdn.net/jpg/03/02/88/46/360_F_302884605_actpipOdPOQHDTnFtp4zg4RtlWzhOASp.jpg",
     },
   ];
   @override
@@ -45,10 +48,20 @@ class _ProfileFragmentState extends State<ProfileFragment> {
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
-                      const CircleAvatar(
-                        radius: 40,
-                        backgroundImage: NetworkImage(
-                          'https://example.com/avatar3.jpg',
+                      CachedNetworkImage(
+                        imageUrl:
+                            'https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg',
+                        height: 72.h,
+                        width: 72.w,
+                        placeholder: (context, url) => ShimmerLabel(
+                          height: 72.h,
+                          width: 72.w,
+                        ),
+                        imageBuilder: (context, imageProvider) => CircleAvatar(
+                          backgroundImage: imageProvider,
+                        ),
+                        errorWidget: (context, url, error) => const Icon(
+                          Icons.person,
                         ),
                       ),
                       const SizedBox(width: 16),
@@ -112,7 +125,8 @@ class _ProfileFragmentState extends State<ProfileFragment> {
                     vertical: 8,
                   ),
                   itemCount: roles.length,
-                  separatorBuilder: (context, index) => const SizedBox(width: 12),
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(width: 12),
                   itemBuilder: (context, index) {
                     final role = roles[index];
                     return Container(
