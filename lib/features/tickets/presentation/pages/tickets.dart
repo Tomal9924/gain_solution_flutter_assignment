@@ -21,12 +21,25 @@ class TicketsFragment extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
                   children: [
-                    Text(
-                      '124 Tickets',
-                      style: TextStyles.body(
-                        context: context,
-                        color: theme.textPrimary.withValues(alpha: .6),
-                      ).copyWith(fontWeight: FontWeight.bold),
+                    BlocBuilder<FindAllTicketsBloc, FindAllTicketsState>(
+                      builder: (context, state) {
+                        if (state is FindAllTicketsLoading) {
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        } else if (state is FindAllTicketsError) {
+                          return Center(child: Text(state.failure.message));
+                        } else if (state is FindAllTicketsDone) {
+                          return Text(
+                            '${state.tickets.length} Tickets',
+                            style: TextStyles.body(
+                              context: context,
+                              color: theme.textPrimary.withValues(alpha: .6),
+                            ).copyWith(fontWeight: FontWeight.bold),
+                          );
+                        } else {
+                          return const Icon(Icons.error);
+                        }
+                      },
                     ),
                     const Spacer(),
                     InkWell(

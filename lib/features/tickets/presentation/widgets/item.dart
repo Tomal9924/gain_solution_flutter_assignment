@@ -1,3 +1,4 @@
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gain_solutions_flutter_assignment/core/shared/extension/ticket_category_status.dart';
 import 'package:gain_solutions_flutter_assignment/features/tickets/tickets.dart';
 
@@ -106,7 +107,21 @@ class TicketCard extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.circle, size: 6, color: priorityColor),
+                        Icon(Icons.circle, size: 6, color: priorityColor)
+                            .animate(
+                              delay: const Duration(milliseconds: 1500),
+                              onComplete: (controller) => controller.repeat(),
+                            ) //-----------Blowing animation-------------
+                            .fadeIn(
+                                duration: const Duration(milliseconds: 1500))
+                            .scale(
+                              begin: const Offset(.5, .5),
+                              end: const Offset(2.5, 2.5),
+                              duration: const Duration(milliseconds: 1500),
+                              curve: Curves.easeInOut,
+                            )
+                            .fadeOut(
+                                duration: const Duration(milliseconds: 1500)),
                         const SizedBox(width: 8),
                         Text(
                           ticket.priority,
@@ -148,18 +163,18 @@ class TicketCard extends StatelessWidget {
                         vertical: 4,
                       ),
                       decoration: BoxDecoration(
-                        color: theme.backgroundPrimary,
+                        color: Colors.red.withValues(alpha: .15),
                         borderRadius: BorderRadius.circular(6),
                         border: Border.all(
                           width: .7,
-                          color: theme.textPrimary.withValues(alpha: .3),
+                          color: theme.negative.withValues(alpha: .1),
                         ),
                       ),
                       child: Text(
                         'Spam',
                         style: TextStyles.caption(
                           context: context,
-                          color: theme.textPrimary.withValues(alpha: .5),
+                          color: theme.negative,
                         ),
                       ),
                     ),
