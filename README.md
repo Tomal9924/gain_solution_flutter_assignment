@@ -1,7 +1,7 @@
-# Flutter assignment - Documentation by [Tanvir Ahmed](https://Tanvir Ahmed.dev/) v1.0
+# Flutter assignment - Documentation by [Tanvir Ahmed]
 
 Created: 19/11/2024  
-By: [Tanvir Ahmed](https://Tanvir Ahmed.dev/)  
+By: [Tanvir Ahmed]  
 Email: [tomalahmed350@gmail.com](mailto:tomalahmed350@gmail.com)
 
 
@@ -11,18 +11,14 @@ Email: [tomalahmed350@gmail.com](mailto:tomalahmed350@gmail.com)
 ---
 
 ## Table of Contents
-- [Flutter assignment - Documentation](#Flutter assignment---documentation-by-Tanvir Ahmed-v10)
+- [Flutter assignment - Documentation](#Flutter assignment---> Documentation-by-Tanvir Ahmed)
   - [Change Application Colors 🔝](#change-application-colors-)
     - [Sample Code](#sample-code)
-    - [If you want to change application primary color just modify this lines of code](#if-you-want-to-change-application-primary-color-just-modify-this-lines-of-code)
-      - [OLD CODE](#old-code)
-      - [Update CODE](#update-code)
-  - [Change Application Theme 🔝](#change-application-theme-)
-    - [Sample Code](#sample-code-1)
   - [Use Custom Fonts 🔝](#use-custom-fonts-)
   - [Change Application Constant Value 🔝](#change-application-constant-value-)
   - [Project Structures - Clean Architectures 🔝](#project-structures---clean-architectures-)
-- [Features 🔝](#features-)
+  - [Features 🔝](#features-)
+  - [Screenshots 🔝](#screenshots-)
   - [State management 🔝](#state-management-)
   - [Application Routing 🔝](#application-routing-)
   - [Plugins 🔝](#plugins-)
