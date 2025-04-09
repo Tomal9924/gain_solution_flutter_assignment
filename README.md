@@ -171,7 +171,7 @@ Project Structures - Clean Architectures [🔝](#table-of-contents)
 ============================
 
 ## Splash Screen
-![Splash](https://i.imgur.com/mH4nEtO.png) 
+![Splash](https://i.imgur.com/BI1oSHZ.png) 
 
 ## Tickets Management
 - The app displays a list of support tickets with details such as ticket ID, subject, priority, status, and creation date.
