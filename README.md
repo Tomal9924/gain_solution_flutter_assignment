@@ -164,19 +164,58 @@ Project Structures - Clean Architectures [🔝](#table-of-contents)
 *   [Contact-Search](lib/features/contact/)
 
 
+
 [Screenshots](lib/features/) [🔝](#table-of-contents)
 ============================
-*   [Ticket](lib/features/tickets/)
+## Tickets Management
+- The app displays a list of support tickets with details such as ticket ID, subject, priority, status, and creation date.
+- Tickets can be marked with statuses like "New," "First response overdue," or "Customer responded."
+- Each ticket includes metadata like the creator's name (e.g., Michele, Noah, Jonus) and timestamp (e.g., 23 Dec 2023 03:43 pm).
+- A filter option allows users to narrow down tickets by brand (e.g., GainSolution), priority, and tags.
 ![Ticket](https://i.imgur.com/H7yql96.jpeg) 
-*   [Contacts](lib/features/contacts/)
+## Contacts Management
+- The app has a contacts section where users can search for and view contact details.
+- Contact information includes name, email, phone number, and address (e.g., Michele Kahnwald, michele@email.com, +12 34 56 78 90, 12A, Lillistrom, Norway).
+- Users can filter contacts by name (e.g., searching for "Michele").
 ![Contacts](https://i.imgur.com/r83RXWo.jpeg) 
-*   [Profile](lib/features/profile/)
+## Profile Management
+- The app includes a "My Profile" section where users can view and edit their personal information.
+- Profile details include the user's name (e.g., Jonaus Kahnwald), email (e.g., username@email.com), and assigned roles (e.g., Manager, Agent).
+- Roles are associated with groups (e.g., Codecanyon support, Marvel team) and include team members (e.g., Jonaus Kahnwald, Lana Si).
+- There is a logout option for the user to sign out of the app.
 ![Profile](https://i.imgur.com/WayOvAc.jpeg) 
-*   [Filter](lib/features/filter/)
+## Filtering and Tagging
+- The app provides a filtering mechanism for tickets, allowing users to filter by brand (e.g., GainSolution, GainHQ), priority, and tags.
+- Tags are predefined (e.g., Tag one, Tag two, Tag three with long text) and can be searched or selected to refine ticket visibility.
 ![Filter](https://i.imgur.com/C3Nctfv.jpeg) 
-*   [Filter-with-custom-feature](lib/features/filter/)
+### Customized Filter by API
+- **Access**: The Customized Filter by API is likely accessible through the same filter icon on the Tickets screen but may be a secondary option or dynamically loaded based on API data.
+- **Purpose**: This filter allows for dynamic filtering options that are fetched from an API, enabling more flexibility and customization based on the backend configuration.
+- **Components**:
+  - **Dynamic Brand Selection**:
+    - Brands are fetched from the API, allowing the list to be updated dynamically (e.g., new brands like "GainHQ" could be added without app updates).
+    - Similar to the Global Filter, users can select multiple brands using checkboxes.
+  - **Dynamic Priority Selection**:
+    - Priority options are retrieved from the API, potentially including custom priority levels beyond the predefined ones (e.g., "Critical," "Medium").
+    - Presented in a dropdown menu similar to the Global Filter.
+  - **Dynamic Tags Selection**:
+    - Tags are fetched from the API, allowing for a more extensive or updated list compared to the predefined tags in the Global Filter.
+    - Users can search for tags using a search bar and select multiple tags, similar to the Global Filter.
+    - Example tags might include new or updated labels not present in the Global Filter (e.g., "Tag eight," "Tag nine").
+- **Actions**:
+  - An "Apply" button applies the customized filter criteria to the ticket list.
+  - A close button (X) allows users to exit without saving changes.
+- **Behavior**:
+  - The Customized Filter by API fetches filter options (brands, priorities, tags) from a backend API, ensuring the filter options are always up-to-date with the latest backend data.
+  - Once applied, the ticket list updates to reflect the filtered results based on the API-provided criteria.
+  - This filter is particularly useful for scenarios where filter options need to be dynamically updated (e.g., new brands or tags added by the support team).
 ![Profile](https://i.imgur.com/QEvQray.jpeg) 
-*   [Contact-Search](lib/features/contact/)
+## Contacts Search
+- The app provides a search bar in the Contacts section, allowing users to search for contacts by name.
+- The search bar is prominently displayed at the top of the Contacts screen with a placeholder text "Search contact" and a magnifying glass icon.
+- As the user types a query (e.g., "Michele"), the app filters the contact list in real-time to display matching results.
+- Search results show contact details such as name, email, phone number, and address (e.g., Michele Kahnwald, michele@email.com, +12 34 56 78 90, 12A, Lillistrom, Norway).
+- The search is case-insensitive, ensuring that users can find contacts regardless of how they type the name (e.g., "m
 ![Contact-Search](https://i.imgur.com/Rrmpnfk.jpeg) 
 
 
