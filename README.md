@@ -202,22 +202,33 @@ Project Structures - Clean Architectures [🔝](#table-of-contents)
     - Tags are fetched from the API, allowing for a more extensive or updated list compared to the predefined tags in the Global Filter.
     - Users can search for tags using a search bar and select multiple tags, similar to the Global Filter.
     - Example tags might include new or updated labels not present in the Global Filter (e.g., "Tag eight," "Tag nine").
-- **Actions**:
-  - An "Apply" button applies the customized filter criteria to the ticket list.
-  - A close button (X) allows users to exit without saving changes.
-- **Behavior**:
-  - The Customized Filter by API fetches filter options (brands, priorities, tags) from a backend API, ensuring the filter options are always up-to-date with the latest backend data.
-  - Once applied, the ticket list updates to reflect the filtered results based on the API-provided criteria.
-  - This filter is particularly useful for scenarios where filter options need to be dynamically updated (e.g., new brands or tags added by the support team).
+
 ![Profile](https://i.imgur.com/QEvQray.jpeg) 
 ## Contacts Search
 - The app provides a search bar in the Contacts section, allowing users to search for contacts by name.
 - The search bar is prominently displayed at the top of the Contacts screen with a placeholder text "Search contact" and a magnifying glass icon.
 - As the user types a query (e.g., "Michele"), the app filters the contact list in real-time to display matching results.
 - Search results show contact details such as name, email, phone number, and address (e.g., Michele Kahnwald, michele@email.com, +12 34 56 78 90, 12A, Lillistrom, Norway).
-- The search is case-insensitive, ensuring that users can find contacts regardless of how they type the name (e.g., "m
-![Contact-Search](https://i.imgur.com/Rrmpnfk.jpeg) 
 
+![Contact-Search](https://i.imgur.com/Rrmpnfk.jpeg) 
+## Contacts Popup Menu
+
+- **Trigger**: The popup menu is displayed when the user taps the three-dot icon (more options) located to the right of a contact's name in the Contacts list (e.g., next to "Michele Kahnwald").
+
+- **Options**:
+  - **Edit**:
+    - The first option in the popup menu.
+    - Allows the user to edit the contact's details (e.g., name, email, phone number, address).
+  - **View Tickets**:
+    - The second option in the popup menu.
+    - Enables the user to view all tickets associated with the selected contact (e.g., tickets created by or assigned to Michele Kahnwald).
+  - **Delete**:
+    - The third option in the popup menu.
+    - Allows the user to delete the contact from the list.
+    - This action is likely to prompt a confirmation dialog to prevent accidental deletion.
+
+
+![Contact-popup](https://i.imgur.com/bp0pSuz.jpeg)
 
 State management [🔝](#table-of-contents)
 -----------------------------------------
