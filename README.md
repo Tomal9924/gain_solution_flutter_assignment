@@ -9,6 +9,8 @@ Email: [tomalahmed350@gmail.com](mailto:tomalahmed350@gmail.com)
 ![Flutter assignment Logo](https://i.imgur.com/7sx5g2b.png)
 
 ---
+[![Download APK](https://img.shields.io/badge/Download-APK-blue?style=for-the-badge)](https://example.com/app-release.apk)
+
 
 ## Table of Contents
 - [Flutter assignment - Documentation](#Flutter assignment---> Documentation-by-Tanvir Ahmed)
