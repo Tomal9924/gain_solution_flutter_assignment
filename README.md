@@ -12,8 +12,6 @@ Email: [tomalahmed350@gmail.com](mailto:tomalahmed350@gmail.com)
 
 ## Table of Contents
 - [Flutter assignment - Documentation](#Flutter assignment---documentation-by-Tanvir Ahmed-v10)
-  - [Table of Contents](#table-of-contents)
-  - [Environment Details](#environment-details)
   - [Change Application Colors 🔝](#change-application-colors-)
     - [Sample Code](#sample-code)
     - [If you want to change application primary color just modify this lines of code](#if-you-want-to-change-application-primary-color-just-modify-this-lines-of-code)
@@ -96,17 +94,18 @@ Use Custom Fonts [🔝](#table-of-contents)
       flutter pub get
 ```          
     
-*   Now you can use your custom font in your application
+*   Now i used the font and TextStyle form -()- [lib/core/shared/text_styles.dart](lib/core/shared/text_styles.dart)
 *   For Instance
 ```dart
-        Text(
-             'Hello World',
-             style: TextStyle(
-               fontFamily: 'Roboto',
-               fontSize: 24,
-               fontWeight: FontWeight.bold,
-             ),
-            );
+      static TextStyle caption({
+          required BuildContext context,
+          required Color color,
+        }) {
+          return GoogleFonts.montserrat(
+            textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: color, fontWeight: FontWeight.w600, fontSize: 10.sp),
+          );
+        }
 ```            
     
 
@@ -162,29 +161,35 @@ Project Structures - Clean Architectures [🔝](#table-of-contents)
 
 [Features](lib/features/) [🔝](#table-of-contents)
 ============================
-*   [Onboarding](lib/features/onboarding/)
-*   [Login](lib/features/login)
-*   [Signup](lib/features/signup)
-*   [Profile](lib/features/profile)
-*   [Forgot Password](lib/features/forgot_password)
-*   [Reset Password](lib/features/reset_password)
-*   [Invite Friends](lib/features/invite_friends)
-*   [Home](lib/features/home)
-*   [Restaurant](lib/features/restaurant)
-*   [History](lib/features/history)
-*   [Notification](lib/features/notification)
-*   [Reals](lib/features/reals)
-*   [FAQ](lib/features/faq)
-*   [Privacy Policy](lib/features/privacy_policy)
+*   [Ticket](lib/features/tickets/)
+*   [Contacts](lib/features/contacts/)
+*   [Profile](lib/features/profile/)
+*   [Filter](lib/features/filter/)
+*   [Contact-Search](lib/features/contact/)
+
+
+[Screenshots](lib/features/) [🔝](#table-of-contents)
+============================
+*   [Ticket](lib/features/tickets/)
+![Ticket](https://i.imgur.com/H7yql96.jpeg) 
+*   [Contacts](lib/features/contacts/)
+![Contacts](https://i.imgur.com/r83RXWo.jpeg) 
+*   [Profile](lib/features/profile/)
+![Profile](https://i.imgur.com/WayOvAc.jpeg) 
+*   [Filter](lib/features/filter/)
+![Filter](https://i.imgur.com/C3Nctfv.jpeg) 
+*   [Filter-with-custom-feature](lib/features/filter/)
+![Profile](https://i.imgur.com/QEvQray.jpeg) 
+*   [Contact-Search](lib/features/contact/)
+![Contact-Search](https://i.imgur.com/Rrmpnfk.jpeg) 
 
 
 State management [🔝](#table-of-contents)
 -----------------------------------------
 
-![Bloc](https://i.imgur.com/dPoWwQf.png)  
+
 * [Flutter BloC](https://bloclibrary.dev/#/gettingstarted)
 * [Mason](https://pub.dev/packages/mason)
-* [Fgen](https://pub.dev/packages/flutter_asset_generator)
 
 Application Routing [🔝](#table-of-contents)
 --------------------------------------------
@@ -202,84 +207,35 @@ For Application Routing, we are using [GoRouter](https://pub.dev/packages/go_rou
               }
     ```   
     
-*   Register your route in [lib/core/shared/router.dart](lib/core/shared/router.dart) Sample Code
-    ```dart
-          final rootNavigationKey = GlobalKey<NavigatorState>();
-              final dashBoardNavigationKey = GlobalKey<NavigatorState>();
-            
-              final router = GoRouter(
-                  navigatorKey: rootNavigationKey,
-                  initialLocation: WelcomePage.path,
-                  routes: [
-                      GoRoute(
-                      path: WelcomePage.path,
-                      name: WelcomePage.name,
-                      builder: (context, state) => const WelcomePage(),
-                      ),
-                  ]
-              );
-            
-    ```
 
 *   Navigate to the page
     ```dart
-              GoRouter.of(context).goTo(DashboardPage.path);
+             context.pushNamed(DashboardPage.name);
     ```
-    
-*   Navigate to the page with arguments
-    ```dart
-              GoRouter.of(context).goTo(DashboardPage.path, arguments: {'id': 1});
-    ```     
-    
-*   Navigate to the page with arguments and return value
-    ```dart
-              final result = await GoRouter.of(context).goTo(DashboardPage.path, arguments: {'id': 1});
-    ```
-*   Navigate to the page with arguments and return value
-    ```dart
-              final result = await GoRouter.of(context).goTo(DashboardPage.path, arguments: {'id': 1});
-     ```       
-    
 
 ## Plugins [🔝](#table-of-contents)
-| Package                        | Version  |
-|--------------------------------|-----------|
-| cached_network_image           | ^3.4.1    |
-| chewie                         | ^1.8.5    |
-| collection                     | ^1.18.0   |
-| cupertino_icons                | ^1.0.8    |
-| custom_rating_bar              | ^3.0.0    |
-| either_dart                    | ^1.0.0    |
-| equatable                      | ^2.0.5    |
-| flutter                        | sdk: flutter |
-| flutter_animate                | ^4.5.0    |
-| flutter_bloc                   | ^8.1.6    |
-| flutter_dotenv                 | ^5.2.1    |
-| flutter_inappwebview           | ^6.1.4    |
-| flutter_launcher_icons         | ^0.14.0   |
-| flutter_native_splash          | ^2.4.1    |
-| flutter_screenutil             | ^5.9.3    |
-| flutter_svg                    | ^2.0.10+1 |
-| flutter_typeahead              | ^5.2.0    |
-| geolocator                     | ^13.0.1   |
-| get_it                         | ^8.0.0    |
-| go_router                      | ^14.2.7   |
-| google_fonts                   | ^6.2.1    |
-| google_maps_flutter            | ^2.9.0    |
-| http                           | ^1.2.2    |
-| hydrated_bloc                  | ^9.1.5    |
-| image_picker                   | ^1.1.2    |
-| in_app_update                  | ^4.2.3    |
-| internet_connection_checker    | ^1.0.0+1  |
-| intl                           | ^0.19.0   |
-| lottie                         | ^3.1.2    |
-| modal_bottom_sheet             | ^3.0.0    |
-| package_info_plus              | ^8.0.2    |
-| path_provider                  | ^2.1.4    |
-| pin_code_fields                | ^8.0.1    |
-| timeago                        | ^3.7.0    |
-| url_launcher                   | ^6.3.1    |
-| video_player                   | ^2.9.2    |
+- [`cupertino_icons`](https://pub.dev/packages/cupertino_icons): ^1.0.8  
+- [`flutter_native_splash`](https://pub.dev/packages/flutter_native_splash): ^2.4.5  
+- [`cached_network_image`](https://pub.dev/packages/cached_network_image): ^3.4.1  
+- [`collection`](https://pub.dev/packages/collection): ^1.19.1  
+- [`either_dart`](https://pub.dev/packages/either_dart): ^1.0.0  
+- [`equatable`](https://pub.dev/packages/equatable): ^2.0.7  
+- [`flutter_bloc`](https://pub.dev/packages/flutter_bloc): ^8.1.5  
+- [`flutter_screenutil`](https://pub.dev/packages/flutter_screenutil): ^5.9.3  
+- [`get_it`](https://pub.dev/packages/get_it): ^8.0.3  
+- [`google_fonts`](https://pub.dev/packages/google_fonts): ^6.2.1  
+- [`go_router`](https://pub.dev/packages/go_router): ^14.8.1  
+- [`hydrated_bloc`](https://pub.dev/packages/hydrated_bloc): ^9.1.5  
+- [`http`](https://pub.dev/packages/http): ^1.3.0  
+- [`internet_connection_checker`](https://pub.dev/packages/internet_connection_checker): ^3.0.1  
+- [`intl`](https://pub.dev/packages/intl): ^0.20.2  
+- [`image_picker`](https://pub.dev/packages/image_picker): ^1.1.2  
+- [`in_app_update`](https://pub.dev/packages/in_app_update): ^4.2.3  
+- [`package_info_plus`](https://pub.dev/packages/package_info_plus): ^8.3.0  
+- [`path_provider`](https://pub.dev/packages/path_provider): ^2.1.5  
+- [`url_launcher`](https://pub.dev/packages/url_launcher): ^6.3.1  
+- [`flutter_animate`](https://pub.dev/packages/flutter_animate): ^4.5.2  
+- [`flutter_svg`](https://pub.dev/packages/flutter_svg): ^2.0.17  
 
 ## Dev Plugins [🔝](#table-of-contents)
 | Package                        | Version   |
@@ -291,19 +247,4 @@ For Application Routing, we are using [GoRouter](https://pub.dev/packages/go_rou
 
 
 
-![](https://avatars.githubusercontent.com/u/179485439?s=96&v=4)
-
-Contact Us
-----------
-
-We'd love to hear from you!
-
-3rd Floor, House 31, Road 10, Sector 6
-
-Uttara, Dhaka-1230, Bangladesh
-
-* * *
-
-[Go To Table of Contents](#table-of-contents)
-
-* * *
+![](https://i.imgur.com/7sx5g2b.png)
