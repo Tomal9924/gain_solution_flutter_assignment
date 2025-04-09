@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="gain_solutions_flutter_assignment"
         android:name="${applicationName}"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
